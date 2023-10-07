@@ -2,6 +2,24 @@
 using namespace std;
 typedef long long ll;
 const int M = 1e9 + 7;
+/*
+n fish, numbered from 1 to n, live in a lake. Every day right one pair of fish meet,
+and the probability of each other pair meeting is the same. If two fish with indexes
+i and j meet,the first will eat up the second with the probability aij, and the
+second will eat up the first with the probability aji = 1 - aij. The described process
+goes on until there are at least two fish in the lake. For each fish find out the
+probability that it will survive to be the last in the lake.
+*/
+
+/*
+Think of mask denoting the set
+
+Recursion is defined as
+Prob[S{1, 2, .... i}]=Σdeath_of_fish(j)*Prob[S{1, 2, .... i}∪{j}] where j doesnt belong to {1, 2, .... i}
+
+Prob[set] is computed by recursion itself
+death_of_fish(j)=(1/(kC2))*(ΣPij) // i is currently alive in the set
+*/
 const int N = 20;
 vector<vector<double>> prob(N, vector<double>(N));
 vector<double> dp(1 << 20, -1);
