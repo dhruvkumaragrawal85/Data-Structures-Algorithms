@@ -23,10 +23,10 @@ void solve()
         int sm = (l / x) * x; // smallest_multiple
 
         if (sm < l)
-            sm = sm + x;
+            sm = sm + x; // if that is less than l increase by x
 
-        for (int i = (sm == x) ? (2 * sm) : sm; i <= h; i += x)
-            segment_primes[i - l] = 0;
+        for (int i = (sm == x) ? (2 * sm) : sm; i <= h; i += x) // start from 2*sm if smallest mult>l
+            segment_primes[i - l] = 0;                          // is prime itself
     }
     for (int i = max(l, 2); i <= h; i++)
     {
