@@ -23,7 +23,7 @@ void Union(int a, int b)
     if(tsize[a]<tsize[b])
     swap(a, b);
     parent[b]=a;
-    tsize[a]=tsize[b]+1;
+    tsize[a]+=tsize[b];
     }
 }
 
