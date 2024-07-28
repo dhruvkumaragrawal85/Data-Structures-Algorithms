@@ -1,4 +1,4 @@
-const ll mod = 5381;                                          //take a prime number mod, larger fewer collisions
+const ll mod = 5381;                                          //take a prime number mod, larger fewer collisions, 7717
 const ll alphabetSize = 26;                                   //alphabet size
 vector<int> search(string pattern, string text)
 {
